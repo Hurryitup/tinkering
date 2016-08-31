@@ -14,17 +14,17 @@ one_upto3Specials = "1(2-3)"
 one_5specials = "1(5)"
 zero_5specials = "5SP"
 two_noSpecials = "2"
-slotNames = ['Monday Morning', 'Monday Afternoon', 'Tuesday Morning', 'Tuesday Afternoon', 'Wednesday Morning',
+SLOT_NAMES = ['Monday Morning', 'Monday Afternoon', 'Tuesday Morning', 'Tuesday Afternoon', 'Wednesday Morning',
              'Wednesday Afternoon', 'Thursday Morning', 'Thursday Afternoon', 'Friday Morning', 'Friday Afternoon',
              'Saturday Morning', 'Saturday Afternoon']
 inorder_slotnames = ['Monday Morning', 'Monday Afternoon', 'Tuesday Morning', 'Tuesday Afternoon', 'Wednesday Morning',
              'Wednesday Afternoon', 'Thursday Morning', 'Thursday Afternoon', 'Friday Morning', 'Friday Afternoon',
              'Saturday Morning', 'Saturday Afternoon']
-numpy.random.shuffle(slotNames)
+numpy.random.shuffle(SLOT_NAMES)
 tours_per_week = "tours_per_week"
 slots = {}
 num_per_slot = 3
-for slot in slotNames:
+for slot in SLOT_NAMES:
     slots[slot] = num_per_slot
 
 ''' Utility functions '''
@@ -89,7 +89,7 @@ def select_random_person(slot_people, slot):
 
 
 def distribute_people(people, limit_per_slot=True):
-    for slot in slotNames:
+    for slot in SLOT_NAMES:
         slot_people = people[people[slot] == "Yes"]
         if len(slot_people.index) == 0:
             continue
